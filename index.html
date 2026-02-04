@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Will you be my Valentine?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+      font-family: "Segoe UI", sans-serif;
+    }
+ 
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 320px;
+      position: relative;
+    }
+ 
+    .emoji {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
+ 
+    h2 {
+      margin-bottom: 25px;
+      color: #333;
+    }
+ 
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+    }
+ 
+    #yesBtn {
+      background: #ff4d88;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(255,77,136,0.5);
+    }
+ 
+    #noBtn {
+      background: #eee;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      position: absolute;
+    }
+ 
+    .note {
+      font-size: 12px;
+      margin-top: 20px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+ 
+  <div class="card">
+    <div class="emoji">🐶❤️</div>
+ 
+    <!-- CHANGE NAME HERE -->
+    <h2>Nirali, will you be my Valentine?</h2>
+ 
+    <div class="buttons">
+      <button id="yesBtn" onclick="yesClicked()">Yes</button>
+      <button id="noBtn" onmouseover="moveNo()">No</button>
+    </div>
+ 
+    <div class="note">"No" seems a bit shy 😜</div>
+  </div>
+ 
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("noBtn");
+ 
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+ 
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+ 
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="
+          height:100vh;
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          align-items:center;
+          background:linear-gradient(135deg,#ffb3d9,#ffe6f0);
+          font-family:Segoe UI;
+          text-align:center;">
+          <h1 style="font-size:40px;color:#ff2e7a;">Yaaay! 💖🥰</h1>
+          <p style="font-size:20px;">Best Valentine ever ❤️</p>
+        </div>
+      `;
+    }
+  </script>
+ 
+</body>
+</html>
